@@ -1,0 +1,115 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #111;
+    color: #fff;
+    margin: 0;
+    height: 100vh; /* Set height to full viewport */
+}
+
+.calculator {
+    width: 90vw; /* Set width to 90% of viewport width */
+    max-width: 400px; /* Max width for larger screens */
+    margin: auto;
+    background-color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    position: relative; /* Added for positioning fullscreen */
+    height: 80vh; /* Set height to 80% of viewport height */
+}
+
+#display {
+    width: 100%;
+    height: 60px;
+    background-color: #222;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 24px;
+    text-align: right;
+    padding: 10px;
+}
+
+.functions, .numbers {
+    margin-top: 10px;
+}
+
+.functions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.btn {
+    flex: 1; /* Make all buttons the same width */
+    margin: 2px; /* Space between buttons */
+    padding: 20px;
+    background-color: #000;
+    border: 2px solid rgba(255, 0, 0, 0.5);
+    color: rgba(255, 0, 0, 0.7);
+    font-size: 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s;
+    height: 60px; /* Set a fixed height for all buttons */
+}
+
+.btn:hover {
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.btn.equal {
+    grid-column: span 2; /* Make equals button larger */
+}
+
+.glitch {
+    animation: glitch 0.3s infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, -2px); }
+    40% { transform: translate(2px, 2px); }
+    60% { transform: translate(-2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+@keyframes glitch-button {
+    0% { transform: translate(0); }
+    20% { transform: translate(-1px, 0); }
+    40% { transform: translate(1px, 1px); }
+    60% { transform: translate(-1px, -1px); }
+    80% { transform: translate(1px, 0); }
+    100% { transform: translate(0); }
+}
+
+.btn.glitch {
+    animation: glitch-button 0.3s infinite;
+}
+
+/* Conversion styles */
+.conversion {
+    margin-top: 10px;
+}
+
+/* Fullscreen button styles */
+#fullscreenBtn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: rgba(255, 0, 0, 0.5);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
